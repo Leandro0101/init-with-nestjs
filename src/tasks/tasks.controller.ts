@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { Task } from './shared/task';
 import { TaskService } from './shared/task.service';
 
@@ -9,5 +9,10 @@ export class TasksController {
   @Get()
   async getAll(): Promise<Task[]> {
     return this.taskService.getAll();
+  }
+
+  @Get(':id')
+  async getById(@Param('id') id: number): Promise<Task> {
+    return this.taskService.getById(id);
   }
 }

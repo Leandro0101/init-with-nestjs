@@ -19,7 +19,7 @@ export class TaskService {
   }
 
   getById(id: number) {
-    const task = this.tasks.find((t) => t.id === id);
+    const task = this.tasks.find((t) => t.id == id);
 
     return task;
   }
