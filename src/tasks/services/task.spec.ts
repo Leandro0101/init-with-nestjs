@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../schemas/Task';
 
 describe('Task', () => {
   it('should be defined', () => {
