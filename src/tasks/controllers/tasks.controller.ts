@@ -7,8 +7,8 @@ import {
   Put,
   Delete,
 } from '@nestjs/common';
-import { Task } from './shared/task';
-import { TaskService } from './shared/task.service';
+import { Task } from '../schemas/Task';
+import { TaskService } from '../shared/task.service';
 
 @Controller('tasks')
 export class TasksController {
