@@ -46,5 +46,8 @@ export class TaskService {
     return taskToUpdate;
   }
 
-  // delete(id: number) {}
+  delete(id: number) {
+    const index = this.tasks.findIndex((t) => t.id == id);
+    this.tasks.splice(index, 1);
+  }
 }
