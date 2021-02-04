@@ -1,7 +1,18 @@
-import { Task } from '../schemas/Task';
+import { Test, TestingModule } from '@nestjs/testing';
+import { TaskService } from './task';
 
-describe('Task', () => {
+describe('TaskService', () => {
+  let provider: TaskService;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [TaskService],
+    }).compile();
+
+    provider = module.get<TaskService>(TaskService);
+  });
+
   it('should be defined', () => {
-    expect(new Task()).toBeDefined();
+    expect(provider).toBeDefined();
   });
 });
