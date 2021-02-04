@@ -36,7 +36,15 @@ export class TaskService {
     return task;
   }
 
-  // update(task: Task) {}
+  update(task: Task) {
+    const taskToUpdate = this.getById(task.id);
+    if (taskToUpdate) {
+      taskToUpdate.description = task.description;
+      taskToUpdate.completed = task.completed;
+    }
+
+    return taskToUpdate;
+  }
 
   // delete(id: number) {}
 }
